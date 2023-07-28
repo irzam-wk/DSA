@@ -3,28 +3,37 @@
 #include <iostream>
 using namespace std;
 int n;
+int arr[10];
+void swap(int a, int b){
+    int temp = a;
+    a = b;
+    b = temp;
+}
 void esrever(int* lastElement){
-    int revarr[10];
-    int k = 0;
-    while(k!=n){
-        revarr[k] = *lastElement;
-        lastElement--;
-        k++;
+    int m = 0;
+    int *ptr = lastElement;
+    while(m < (n-1)){            //GONNA BE THE POINTER TO THE FIRST ELEMENT OF THE ARRAY
+	ptr--;
+	m++;
     }
-    cout<<"\nREVERSED ARRAY:";
-    for(k=0; k<n; k++){
-        cout<<endl<<revarr[k]; //DiD nOT rEtURn array
+    while(lastElement != ptr){
+        swap(*lastElement,*ptr);
+	lastElement--;
+	ptr++;
     }
 }
 int main() {
-    int arr[10];
     cout<<"Enter size of integer array: \n";
     cin>>n;
     cout<<"Enter "<<n<<" Array Elements: "<<endl;
-    for(int i=0; i<n; i++){
-        cin>>arr[i];
+    for(int l=0; l<n; l++){
+        cin>>arr[l];
     }
     int *lastElement = &arr[n-1];
     esrever(lastElement);
+    printf("REVERSED ARRAY: ");
+    for(int j=0; j<n; j++){
+        cout<<arr[j]<<" ";
+    }
     return 0;
 }
