@@ -23,7 +23,7 @@ int main(){
     cout<<"Nter Array elements: ";
     for(int i=0; i<m; i++){
         for (int j=0; j<n; j++){
-            cin>>mat[k][l];
+            cin>>mat[i][j];
         }
     }
     int *firstEl = &mat[0][0];
