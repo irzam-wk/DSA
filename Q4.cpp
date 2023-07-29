@@ -6,7 +6,7 @@ int* lastEl(int* firstEl, int m,int n){
     int i=0,j=0;
     int *ptr = firstEl;
     cout<<"Address of the first element: "<<ptr<<endl;
-    while(i!=(m+n)){
+    while(i!=(m*n)){
         ptr++;
         i++;
     }
@@ -14,18 +14,20 @@ int* lastEl(int* firstEl, int m,int n){
     return ptr;
 }
 int main(){
-    int m,n,mat[m][n];
+    int m,n;
+    int mat[5][5];
     cout<<"Nter the no of rows: ";
     cin>>m;
     cout<<"Nter the no of columns: ";
     cin>>n;
+    cout<<"Nter Array elements: ";
     for(int i=0; i<m; i++){
         for (int j=0; j<n; j++){
-            cin>>mat[m][n];
+            cin>>mat[k][l];
         }
     }
     int *firstEl = &mat[0][0];
-    cout<<lastEl(firstEl,m,n);
+    cout<<lastEl(&mat[0][0],m,n);
     //cout<<firstEl;
     return 0;
 }
